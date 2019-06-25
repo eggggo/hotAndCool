@@ -1,16 +1,77 @@
-const Discord = require('discord.js');
-const client  = new Discord.Client();
-const config = require("./config.json")
-
-const token = 'NTkyNzc1MjE1MjY0ODI1MzY3.XREREQ.LTshbeNPOI94GlfxVLoWDQvq6Ao';
+const {Client, Attachment} = require('discord.js');
+const client = new Client();
+const config = require("./config.json");
+const prefix = '/';
 
 client.on('ready', () => {
     console.log(`yes`);
   });
 
+client.on('message', message=>{
+  let cont = message.content.substring(prefix.length).split(" ");
+
+  switch(cont[0]){
+    case 'andy':
+      message.channel.send(client.user.displayAvatarURL);
+      break;
+  }
+
+  switch(message.content){
+    case'I\'m hungry':
+      var randomNumber = Math.floor(Math.random()*3+1)
+      switch(randomNumber){
+        case 1:
+          message.channel.sendMessage('HAVE SOME LUCIO OHS')
+        break;
+        case 2:
+          message.channel.sendMessage('ANDY HOT AND COOL')
+        break;
+        case 3:
+          const kirbo = new Attachment('https://media.giphy.com/media/5ev3alRsskWA0/giphy.gif')
+          message.channel.send(kirbo)
+        break;
+      }
+    break;
+    case '???'||'?!?!'||'!?!?':
+        const nani = new Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593073499522859008/Nani.gif')
+        message.channel.send(nani)
+    break;
+    case 'bye':
+      message.channel.send('https://clips.twitch.tv/BlueMoldyClipzRlyTho')
+    break;
+    case 'gg ez':
+      var rand2 = Math.floor(Math.random()*6)
+      const replies = ["Well played. I salute you all.",
+      "For glory and honor! Huzzah comrades!",
+      "I'm wrestling with some insecurity issues in my life but thank you all for playing with me.",
+      "It's past my bedtime. Please don't tell my mommy.",
+      "Gee whiz! That was fun. Good playing!",
+      "I feel very, very small... please hold me..."
+      ]
+      message.channel.sendMessage(replies[rand2])
+    break;
+    case 'amazing':
+      message.channel.sendMessage('A-MEI-ZING')
+    break;
+    case 'plan':
+      message.channel.sendMessage('RUSH B NO STOP')
+    break;
+    case 'AND DEY SAY':
+      message.channel.sendMessage('CHIVALRY IS DEAD')
+    break;
+    case 'Mr. Stark':
+      message.channel.sendMessage('I don\'t feel so good')
+    break;
+  }
+  if (message.content.includes('who')){
+    message.channel.sendMessage('me :)')
+  }
+})
+
+
+
 client.login(config.token);
 
-//ok gene
+
+//ok ian
 //test revision number 2
-//Hello Ethan
-//Happy Birthday to me :)
