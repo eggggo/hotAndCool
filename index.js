@@ -10,5 +10,5 @@ client.on('ready', () => {
 
 client.login(config.token);
 
-//ok ian
+//ok gene
 //test revision number 2
