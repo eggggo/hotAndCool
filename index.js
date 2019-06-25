@@ -1,15 +1,11 @@
-const Discord = require('discord.js');
-const client  = new Discord.Client();
+const commando = require('discord.js-commando');
+const client  = new commando.Client();
 
-client.on('message', (message) => {
-  if(message.content == "and dey say") {
-    message.reply("AND DEY SAY AND DEY SAY AND DEY SAY AND DEY SAY");
-  }
+client.registry.registerGroup('random', 'Random');
+client.registry.registerDefaults();
+client.registry.registerCommandsIn(__dirname + "/commands");
 
-});
-
-
-client.login('NTkyNzc1MjE1MjY0ODI1MzY3.XREREQ.LTshbeNPOI94GlfxVLoWDQvq6Ao');
+client.login('NTkyNzc1MjE1MjY0ODI1MzY3.XRIwOA.wLm1Q83lExRCOIyxHrp0zL6Pwgs');
 
 
 
