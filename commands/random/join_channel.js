@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const Attachment = require('discord.js');
+const Discord = require('discord.js')
 
 class JoinChannelCommand extends commando.Command {
     constructor(client) {
@@ -12,17 +12,18 @@ class JoinChannelCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (message.member.voiceChannel.join()){
+        if (message.member.voiceChannel){
             if(!message.guild.voiceConnection){
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         message.channel.send('joined');
                     })
+                    .catch(console.error)
             }
         }
         else{
-            //const conf = new Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
-            message.channel.send('you are not in a vc');
+            const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
+            message.channel.send(conf);
         }
     }
 }
