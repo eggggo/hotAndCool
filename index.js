@@ -1,3 +1,4 @@
+const {Client, Attachment} = require('discord.js');
 const commando = require('discord.js-commando');
 const client  = new commando.Client();
 const config = require("./config.json");
@@ -36,7 +37,9 @@ client.on('message', message=>{
         break;
       }
     break;
-    case '???'||'?!?!'||'!?!?':
+    case '???':
+    case '?!?!':
+    case '!?!?':
         const nani = new Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593073499522859008/Nani.gif')
         message.channel.send(nani)
     break;

@@ -11,7 +11,7 @@ class andy extends commando.Command {
     }
 
     async run(message, args) {
-        message.channel.send(client.user.displayAvatarURL);
+        message.channel.send('https://cdn.discordapp.com/avatars/592775215264825367/0bc192b3d8808f84b4147eba50d223d0.png?size=2048');
         message.channel.send('Andy Hot AND Cool');
     }
 }
