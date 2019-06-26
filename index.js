@@ -6,4 +6,8 @@ client.registry.registerGroup('random', 'Random');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + "/commands");
 
-client.login('NTkyNzc1MjE1MjY0ODI1MzY3.XRIwOA.wLm1Q83lExRCOIyxHrp0zL6Pwgs');
+client.on("ready", () =>{
+  console.log('Bot Online');
+})
+
+client.login(config.token);
