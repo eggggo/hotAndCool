@@ -1,4 +1,4 @@
-const {Client, Attachment} = require('discord.js');
+const Attachment = require('discord.js');
 const commando = require('discord.js-commando');
 const client  = new commando.Client();
 const config = require("./config.json");
