@@ -21,6 +21,9 @@ client.on('message', message=>{
       break;
   }
 */
+  if (message.author == client.user){
+    return
+  }
   switch(message.content){
     case'I\'m hungry':
       var randomNumber = Math.floor(Math.random()*3+1)
