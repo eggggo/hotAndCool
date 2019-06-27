@@ -7,6 +7,8 @@ client.registry.registerGroup('random', 'Random');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + "/commands");
 
+global.servers = [];
+
 client.on("ready", () =>{
   console.log('Bot Online');
 })
