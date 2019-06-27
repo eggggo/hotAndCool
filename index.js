@@ -11,7 +11,7 @@ global.servers = [];
 
 client.on("ready", () =>{
   console.log('Bot Online');
-  client.user.setActivity("themathwizard's stream", {type: "WATCHING"}).catch(console.error);
+  client.user.setActivity("!help for info", {type: "PLAYING"}).catch(console.error);
 })
 
 client.on('message', message=>{
