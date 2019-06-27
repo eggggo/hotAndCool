@@ -14,6 +14,10 @@ client.on("ready", () =>{
 })
 
 client.on('message', message=>{
+
+  if(message.author = client.user){
+    return
+  }
   /*
   let cont = message.content.substring(prefix.length).split(" ");
 
