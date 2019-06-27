@@ -24,10 +24,10 @@ client.on('message', message=>{
       var randomNumber = Math.floor(Math.random()*3+1)
       switch(randomNumber){
         case 1:
-          message.channel.sendMessage('HAVE SOME LUCIO OHS')
+          message.channel.send('HAVE SOME LUCIO OHS')
         break;
         case 2:
-          message.channel.sendMessage('ANDY HOT AND COOL')
+          message.channel.send('ANDY HOT AND COOL')
         break;
         case 3:
           const kirbo = new Discord.Attachment('https://media.giphy.com/media/5ev3alRsskWA0/giphy.gif')
@@ -53,29 +53,29 @@ client.on('message', message=>{
       "Gee whiz! That was fun. Good playing!",
       "I feel very, very small... please hold me..."
       ]
-      message.channel.sendMessage(replies[rand2])
+      message.channel.send(replies[rand2])
     break;
     case 'amazing':
-      message.channel.sendMessage('A-MEI-ZING')
+      message.channel.send('A-MEI-ZING')
     break;
     case 'plan':
-      message.channel.sendMessage('RUSH B NO STOP')
+      message.channel.send('RUSH B NO STOP')
     break;
     case 'AND DEY SAY':
-      message.channel.sendMessage('CHIVALRY IS DEAD')
+      message.channel.send('CHIVALRY IS DEAD')
     break;
     case 'Mr. Stark':
-      message.channel.sendMessage('I don\'t feel so good')
+      message.channel.send('I don\'t feel so good')
     break;
   }
   if (message.content.includes('who')){
-    message.channel.sendMessage('me :)')
+    message.channel.send('me :)')
   }
   if (message.content.includes('thank')){
-    message.channel.sendMessage("you're welcome :)")
+    message.channel.send("you're welcome :)")
   }
   if (message.content.includes('stop')){
-    message.channel.sendMessage("no :)")
+    message.channel.send("no :)")
   }
 })
 
