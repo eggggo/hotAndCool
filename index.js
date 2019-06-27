@@ -15,18 +15,10 @@ client.on("ready", () =>{
 
 client.on('message', message=>{
 
-  if(message.author = client.user){
+  if(message.author == client.user){
     return
   }
-  /*
-  let cont = message.content.substring(prefix.length).split(" ");
 
-  switch(cont[0]){
-    case 'andy':
-      message.channel.send(client.user.displayAvatarURL);
-      break;
-  }
-*/
   switch(message.content){
     case'I\'m hungry':
       var randomNumber = Math.floor(Math.random()*3+1)
@@ -78,6 +70,12 @@ client.on('message', message=>{
   }
   if (message.content.includes('who')){
     message.channel.sendMessage('me :)')
+  }
+  if (message.content.includes('thank')){
+    message.channel.sendMessage("you're welcome :)")
+  }
+  if (message.content.includes('stop')){
+    message.channel.sendMessage("no :)")
   }
 })
 

@@ -33,7 +33,7 @@ class JoinChannelCommand extends commando.Command {
                         "https://www.youtube.com/watch?v=dNQs_Bef_V8", 
                         "https://www.youtube.com/watch?v=kU5KxBYYneA", 
                         "https://www.youtube.com/watch?v=W3GrSMYbkBE", 
-                        "https://www.youtube.com/watch?v=oGJr5N2lgsQ&t=9s", 
+                        "https://www.youtube.com/watch?v=1S6QDZ47MQE", 
                         "https://www.youtube.com/watch?v=6n3pFFPSlW4", 
                         "https://www.youtube.com/watch?v=lXMskKTw3Bc", 
                         "https://www.youtube.com/watch?v=PfYnvDL0Qcw", 
@@ -41,7 +41,19 @@ class JoinChannelCommand extends commando.Command {
                         "https://www.youtube.com/watch?v=09tzb8lkMwE", 
                         "https://www.youtube.com/watch?v=X2WH8mHJnhM", 
                         "https://www.youtube.com/watch?v=q6EoRBvdVPQ", 
-                        "https://www.youtube.com/watch?v=XnQ-5uFuDtc"
+                        "https://www.youtube.com/watch?v=XnQ-5uFuDtc",
+                        "https://www.youtube.com/watch?v=IMoGdZLIRn8&list=LL72cjNtbukMkxI0-ohcwotQ&index=64&t=0s",
+                        "https://www.youtube.com/watch?v=vE2ETqUGj6Q&list=PL9TSsKkE-7QK9q7OiPjAst9Gg2rR72wZa&index=2&t=0s",
+                        "https://www.youtube.com/watch?v=9wnNW4HyDtg",
+                        "https://www.youtube.com/watch?v=rY-FJvRqK0E&list=PL9TSsKkE-7QJ-P3gKgXl_BL6WOfcIa1yd&index=31&t=0s",
+                        "https://www.youtube.com/watch?v=9bdORiwoLho&list=PL9TSsKkE-7QJ-P3gKgXl_BL6WOfcIa1yd&index=5&t=0s",
+                        "https://www.youtube.com/watch?v=dv13gl0a-FA&list=PL9TSsKkE-7QJ-P3gKgXl_BL6WOfcIa1yd&index=7&t=0s",
+                        "https://www.youtube.com/watch?v=y6120QOlsfU&list=PL9TSsKkE-7QJ-P3gKgXl_BL6WOfcIa1yd&index=14&t=0s",
+                        "https://www.youtube.com/watch?v=ZZ5LpwO-An4&list=PL9TSsKkE-7QJ-P3gKgXl_BL6WOfcIa1yd&index=13&t=0s",
+                        "https://www.youtube.com/watch?v=9JRLCBb7qK8",
+                        "https://www.youtube.com/watch?v=LDU_Txk06tM",
+                        "https://www.youtube.com/watch?v=5NHt1k_9-J8",
+                        "https://www.youtube.com/watch?v=mj-v6zCnEaw"
                     ]}
                 }
                 message.member.voiceChannel.join()
