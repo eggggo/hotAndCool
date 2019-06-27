@@ -12,9 +12,11 @@ class LeaveChannelCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if(message.guild.voiceConnection){
-            message.guild.voiceConnection.disconnect()
-            message.channel.send('bye');
+        if(message.member.voiceChannel){
+            if(message.guild.voiceConnection){
+                    message.guild.voiceConnection.disconnect()
+                    message.channel.send('bye');
+            }
         }
         else{
             const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')

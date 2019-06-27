@@ -5,7 +5,7 @@ const YTDL = require('ytdl-core');
 function play(connection, message){
     var server = servers[message.guild.id];
     var randomNumber = Math.floor(Math.random()*server.queue.length)
-    server.dispatcher = connection.playStream(YTDL(server.queue[randomNumber],{filter: "audioonly"}))
+    server.dispatcher = connection.playStream(YTDL(server.queue[randomNumber],{filter: "audioonly", quality: "highestaudio", highWaterMark: 1}),{highWaterMark: 1})
     server.dispatcher.on("end",function(){
         connection.disconnect();
     })
