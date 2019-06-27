@@ -1,4 +1,4 @@
-const Attachment = require('discord.js');
+const Discord = require('discord.js')
 const commando = require('discord.js-commando');
 const client  = new commando.Client();
 const config = require("./config.json");
@@ -32,7 +32,7 @@ client.on('message', message=>{
           message.channel.sendMessage('ANDY HOT AND COOL')
         break;
         case 3:
-          const kirbo = new Attachment('https://media.giphy.com/media/5ev3alRsskWA0/giphy.gif')
+          const kirbo = new Discord.Attachment('https://media.giphy.com/media/5ev3alRsskWA0/giphy.gif')
           message.channel.send(kirbo)
         break;
       }
@@ -40,7 +40,7 @@ client.on('message', message=>{
     case '???':
     case '?!?!':
     case '!?!?':
-        const nani = new Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593073499522859008/Nani.gif')
+        const nani = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593073499522859008/Nani.gif')
         message.channel.send(nani)
     break;
     case 'bye':
