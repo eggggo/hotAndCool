@@ -1,7 +1,10 @@
 const Discord = require('discord.js')
 const commando = require('discord.js-commando');
-const client  = new commando.Client();
+const client  = new commando.Client({
+  commandPrefix: "\\"
+});
 const config = require("./config.json");
+const ytdl = require('ytdl-core-discord')
 
 client.registry.registerGroup('random', 'Random');
 client.registry.registerDefaults();
