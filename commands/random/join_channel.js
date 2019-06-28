@@ -1,14 +1,14 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
-const YTDL = require('ytdl-core');
+const YTDL = require('ytdl-core-discord');
 
-function play(connection, message){
+async function play(connection, message){
     var server = servers[message.guild.id];
     var randomNumber = Math.floor(Math.random()*server.queue.length)
-    server.dispatcher = connection.playStream(YTDL(server.queue[randomNumber],{quality: "highestaudio", format: 'mp3',highWaterMark: 1<<25}),{highWaterMark: 1})
-    server.dispatcher.on("end",function(){
-        connection.disconnect();
-    })
+    server.dispatcher = connection.playOpusStream(await YTDL(server.queue[randomNumber]))    
+    .on('end', () =>{
+            connection.disconnect()
+        })
 }
 class JoinChannelCommand extends commando.Command {
     constructor(client) {
@@ -58,11 +58,14 @@ class JoinChannelCommand extends commando.Command {
                 }
                 message.member.voiceChannel.join()
                     .then(connection =>{
-                        var server = servers[message.guild.id]
                         message.channel.send('hi');
-                        play(connection, message);
+                         play(connection, message)
                     })
                     .catch(console.error)
+            }
+            else{
+                const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
+                message.channel.send(conf);
             }
         }
         else{

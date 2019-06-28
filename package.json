@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
+    "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "ffmpeg": "0.0.4",
     "opusscript": "0.0.6",
