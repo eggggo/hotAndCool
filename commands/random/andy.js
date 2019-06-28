@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const Discord = require('discord.js')
 
 class andy extends commando.Command {
     constructor(client) {
@@ -6,13 +7,16 @@ class andy extends commando.Command {
             name: "andy",
             group: "random",
             memberName: "andy",
-            description: "andy hot AND cool"
+            description: "a tribute to andy, who is both hot AND cool. Also a more detailed info"
         });
     }
 
     async run(message, args) {
-        message.channel.send('https://cdn.discordapp.com/avatars/592775215264825367/0bc192b3d8808f84b4147eba50d223d0.png?size=2048');
-        message.channel.send('Andy Hot AND Cool');
+        const andyJAM = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593940049121378304/AndyJam.png');
+        message.channel.send(andyJAM);
+        message.channel.send('Andy Hot AND Cool'+"\n"
+        +"Bot made by pepegga#0982, thesciencewizard#2620, bidoof#5988, and Fireshot90#8033"+"\n"
+        +"This is a random bot that does random things, some of which include playing random Youtube clips(from a set list) at random audio qualities(definitely programmed and not due to ytdl-core), replying to certain responses, and rolling random responses, all a result of our random server.");
     }
 }
 
