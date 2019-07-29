@@ -17,7 +17,7 @@ global.songs = ""
 
 client.on("ready", () =>{
   console.log('Bot Online');
-  client.user.setActivity("DOING SOME BOT MAINTENENCE AND UPDATING", {type: "PLAYING"}).catch(console.error);
+  client.user.setActivity("\\help for info", {type: "PLAYING"}).catch(console.error);
 })
 
 client.on('message', message=>{
