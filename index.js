@@ -143,4 +143,4 @@ client.on('message', message=>{
   }
 })
 
-client.login('NTkyNzc1MjE1MjY0ODI1MzY3.XTJsJg.MFsAb3vNVxv_a5REIFVuXpqlW8Q');
+client.login(process.env.token);
