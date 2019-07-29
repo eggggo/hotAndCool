@@ -95,21 +95,21 @@ client.on('message', message=>{
     case 'Mr. Stark':
       message.channel.send('I don\'t feel so good')
     break;
-    case '@Brownie$#9941':
-      message.channel.send('\"Andy owes me dinner\"')
-    break;
-    case 'servers':
-      message.channel.send(client.guilds.array.length)
+    case 'lol':
+      message.channel.send('no ian :)')
     break;
   }
   if (message.content.includes('thank')){
     message.channel.send("you're welcome :)")
   }
-  if (message.content.includes('who')){
+  if (message.content.includes('who ')){
     message.channel.send('me :)')
   }
-  else if (message.content.toLowerCase().substring(0,3).includes('is ') || 
-           message.content.toLowerCase().includes('does ') || 
+  if (message.content.toLowerCase().includes('rishab')){
+      message.channel.send('\"Andy owes me dinner\"')
+}
+  if (message.content.toLowerCase().substring(0,3).includes('is ') || 
+           message.content.toLowerCase().substring(0,5).includes('does ') || 
            message.content.toLowerCase().substring(0,7).includes('should ') ||
            message.content.toLowerCase().substring(0,4).includes('was ') || 
            message.content.toLowerCase().substring(0,5).includes('will ') || 
