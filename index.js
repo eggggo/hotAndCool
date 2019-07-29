@@ -11,16 +11,40 @@ client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + "/commands");
 
 global.servers = [];
+global.nowPlaying = -1;
+global.songsArray = [];
+global.songs = ""
 
 client.on("ready", () =>{
   console.log('Bot Online');
-  client.user.setActivity("\\help for info", {type: "PLAYING"}).catch(console.error);
+  client.user.setActivity("DOING SOME BOT MAINTENENCE AND UPDATING", {type: "PLAYING"}).catch(console.error);
 })
 
 client.on('message', message=>{
 
   if(message.author == client.user){
     return
+  }
+  
+  let args = message.content.split(" ")
+  
+  if (args[0] === 'random') {
+    try{
+    if (args[1] && args[2] && !isNaN(args[1]) && !isNaN(args[2])) {
+      var rand1 = args[1]
+      var rand2 = args[2]
+      var randomNum = Math.floor(Math.random()*(Math.abs(rand2-rand1)+1)+Math.min(rand1, rand2))
+      message.channel.send(randomNum)
+    }
+      else {
+        const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
+        message.channel.send(conf);
+      }
+    }
+    catch(ArrayIndexOutofBoundsError){ 
+      const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
+      message.channel.send(conf);
+    }
   }
 
   switch(message.content){
@@ -71,16 +95,52 @@ client.on('message', message=>{
     case 'Mr. Stark':
       message.channel.send('I don\'t feel so good')
     break;
-  }
-  if (message.content.includes('who')){
-    message.channel.send('me :)')
+    case '@Brownie$#9941':
+      message.channel.send('\"Andy owes me dinner\"')
+    break;
+    case 'servers':
+      message.channel.send(client.guilds.array.length)
+    break;
   }
   if (message.content.includes('thank')){
     message.channel.send("you're welcome :)")
   }
-  if (message.content.includes('stop')){
+  if (message.content.includes('who')){
+    message.channel.send('me :)')
+  }
+  else if (message.content.toLowerCase().substring(0,3).includes('is ') || 
+           message.content.toLowerCase().includes('does ') || 
+           message.content.toLowerCase().substring(0,7).includes('should ') ||
+           message.content.toLowerCase().substring(0,4).includes('was ') || 
+           message.content.toLowerCase().substring(0,5).includes('will ') || 
+           message.content.toLowerCase().substring(0,6).includes('could ') ||
+           message.content.toLowerCase().substring(0,4).includes('can ')  ||
+           message.content.toLowerCase().substring(0,4).includes('are ') ||
+           message.content.toLowerCase().substring(0,3).includes('am ')) {
+    var rand = Math.floor(Math.random()*3)
+    if (rand === 0){
+      message.channel.send('yes :)')
+    }
+    else if (rand === 1){
+      message.channel.send('no :)')
+    }
+    else if (rand === 2){
+      message.channel.send('perhaps :)')
+    }
+  }
+  else if (message.content.includes('stop')){
     message.channel.send("no :)")
+  }
+  else if (message.content.includes('ok gene')){
+    var rand = Math.floor(Math.random()*15)+1
+      var os = ''
+      var i = 0
+      for (i = 0; i < rand; i++){
+        os += 'o'
+      }
+      var okIan = os + 'k ian'
+      message.channel.send(okIan)
   }
 })
 
-client.login(config.token);
+client.login('NTkyNzc1MjE1MjY0ODI1MzY3.XTJsJg.MFsAb3vNVxv_a5REIFVuXpqlW8Q');
