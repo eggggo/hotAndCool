@@ -50,7 +50,7 @@ class JoinChannelCommand extends commando.Command {
 "https://www.youtube.com/watch?v=dNQs_Bef_V8", /* Omae wa mou shindeiru */
 "https://www.youtube.com/watch?v=kU5KxBYYneA", /* KUNAI WIT CHAIN! */
 "https://www.youtube.com/watch?v=6n3pFFPSlW4", /* youve been gnomed.wmv */
-"https://www.youtube.com/watch?v=1S6QDZ47MQE", /* You got jebaited. Vengaboys */
+"https://www.youtube.com/watch?v=JV5kXefmTLc", /* You got jebaited. Vengaboys */
 "https://www.youtube.com/watch?v=q6EoRBvdVPQ", /* Yee */
 "https://www.youtube.com/watch?v=XnQ-5uFuDtc", /* why you heff to be mad? */
 "https://www.youtube.com/watch?v=IMoGdZLIRn8&list=LL72cjNtbukMkxI0-ohcwotQ&index=64&t=0s", /* Hot food vocoded to the piano dub */
