@@ -12,7 +12,7 @@ class LeaveChannelCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if(message.member.voiceChannel.name){
+        if(message.member.voiceChannel){
             if(message.guild.voiceConnection){
                     message.member.voiceChannel.leave()
                     if(message.guild.voiceConnection){
