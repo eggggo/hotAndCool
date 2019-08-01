@@ -84,7 +84,8 @@ class JoinChannelCommand extends commando.Command {
 "https://www.youtube.com/watch?v=OFjqEexH0Tg", /* Mermaid Sisters Song */
 "https://www.youtube.com/watch?v=atuFSv2bLa8&feature=youtu.be", /* Manuel - Gas Gas Gas */
 "https://www.youtube.com/watch?v=BJ0xBCwkg3E&list=PLYst6aAB-EKfs_Gyr9HTuRnlcLws8qvWH", /*Running in the 90's*/
-"https://www.youtube.com/watch?v=bsOv7069Vsg"/*Interstellar Remix*/
+"https://www.youtube.com/watch?v=bsOv7069Vsg", /*Interstellar Remix*/
+"https://www.youtube.com/watch?v=X516W_0NPMQ" /*xQc Bohemian Rhapsody*/
                     ]}
                     var i;
                     for(i=0; i < servers[message.guild.id].queue.length; i++){
