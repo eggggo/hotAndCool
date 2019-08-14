@@ -36,7 +36,7 @@ class JoinChannelCommand extends commando.Command {
                     servers[message.guild.id] = {queue: [
                         /*Category: Weeb */
 
-"https://www.youtube.com/watch?v=iS2s9deFClY", /* Chika Dance */
+"https://www.youtube.com/watch?v=vUoI6gU1_OY", /* Chika Dance */
 "https://www.youtube.com/watch?v=9wnNW4HyDtg", /* Ayaya! Ayaya! Intensifies */
 "https://www.youtube.com/watch?v=Nafii87gdzs", /* Evangelion */
 "https://www.youtube.com/watch?v=n2rVnRwW0h8", /* Cowboy Bebop */
