@@ -15,8 +15,10 @@ class vcshare extends commando.Command {
         var baseLink = "http://www.discordapp.com/channels/"
         var serverID = message.guild.id
         var vcID = message.member.voiceChannelID
-        if(serverID && vcID){
+        var vcName = message.member.voiceChannel.name
+        if(serverID && vcID && vcName){
             message.channel.send(baseLink+serverID+"/"+vcID)
+            message.channel.send("VC share link active in "+vcName)
         }
         else{
             const conf = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593098453869920257/confused.jpg')
