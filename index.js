@@ -27,7 +27,10 @@ client.on('message', message=>{
   }
   
   let args = message.content.split(" ")
-  
+  if (message.content === '\\listEmojis'){
+    const emojiList = message.guild.emojis.map(e=>e.toString()).join(" \n ");
+    message.channel.send(emojiList);
+  }
   if (args[0] === 'random') {
     try{
     if (args[1] && args[2] && !isNaN(args[1]) && !isNaN(args[2])) {
