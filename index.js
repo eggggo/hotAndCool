@@ -5,6 +5,7 @@ const client  = new commando.Client({
 });
 const config = require("./config.json");
 const ytdl = require('ytdl-core-discord')
+var emoji = [];
 
 client.registry.registerGroup('random', 'Random');
 client.registry.registerDefaults();
@@ -27,8 +28,14 @@ client.on('message', message=>{
   }
   
   let args = message.content.split(" ")
+  
+  if (message.content.startsWith('\:'){
+      var eID = message.content.substring(message.content.lastIndexOf(':')+1,message.content.lastIndexOf('>'))
+      emoji[eID]++;
+  }
+  
   if (message.content === 'listEmojiUse'){
-    const emojiList = message.guild.emojis.map(e=>e.toString()).join(" \n ");
+    const emojiList = message.guild.emojis.map((e, x) => (e) + ' | ' +e.name+ ': ' + emoji[x]).join('\n')
     message.channel.send(emojiList);
   }
   if (args[0] === 'random') {
