@@ -29,7 +29,7 @@ client.on('message', message=>{
   
   let args = message.content.split(" ")
   
-  if (message.content.startsWith('\:'){
+  if (message.content.startsWith('\:')){
       var eID = message.content.substring(message.content.lastIndexOf(':')+1,message.content.lastIndexOf('>'))
       emoji[eID]++;
   }
