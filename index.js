@@ -27,7 +27,7 @@ client.on('message', message=>{
   }
   
   let args = message.content.split(" ")
-  if (message.content === '\\listEmojis'){
+  if (message.content === 'listEmojiUse'){
     const emojiList = message.guild.emojis.map(e=>e.toString()).join(" \n ");
     message.channel.send(emojiList);
   }
