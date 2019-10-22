@@ -56,6 +56,11 @@ client.on('message', message=>{
       message.channel.send(conf);
     }
   }
+  
+  if (message.content === 'https://cdn.discordapp.com/emojis/570961161734979584.png?v=1'){
+    const andyHead = new Discord.Attachment('https://cdn.discordapp.com/attachments/593081484869632011/636018599957364766/ANDY_IS_HOT_AND_COOL_AND_HAS_AN_ASTRONOMICALLY_IMMENSE_ENCEPHALON1.gif')
+    message.channel.send(andyHead);
+  }  
 
   switch(message.content){
     case'I\'m hungry':
