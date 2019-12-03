@@ -131,7 +131,7 @@ client.on('message', message=>{
            message.content.toLowerCase().substring(0,6).includes('could ') ||
            message.content.toLowerCase().substring(0,4).includes('can ')  ||
            message.content.toLowerCase().substring(0,4).includes('are ') ||
-           message.content.toLowerCase().substring(0,3).includes('am ')) ||
+           message.content.toLowerCase().substring(0,3).includes('am ') ||
            message.content.toLowerCase().substring(0,3).includes('do ')){
     var rand = Math.floor(Math.random()*3)
     if (rand === 0){
