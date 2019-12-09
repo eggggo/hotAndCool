@@ -123,6 +123,11 @@ client.on('message', message=>{
   if (message.content.toLowerCase().includes('rishab')){
       message.channel.send('\"Andy owes me dinner\"')
 }
+  if (message.content.includes('<:geneHead:627501925033705482>')){
+     const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
+     const clap = client.emojis.find(emoji => emoji.name === "clapGif");
+     message.reply(`${andyHead} ${clap}`);
+  }
   if (message.content.toLowerCase().substring(0,3).includes('is ') || 
            message.content.toLowerCase().substring(0,5).includes('does ') || 
            message.content.toLowerCase().substring(0,7).includes('should ') ||
