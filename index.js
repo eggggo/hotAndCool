@@ -128,7 +128,7 @@ client.on('message', message=>{
      const clap = client.emojis.find(emoji => emoji.name === "clapGif");
      message.channel.send(`${andyHead} ${clap}`);
   }
-  if (message.content.substring(0,10).includes('xqcDitch ')){
+  if (message.content === 'xqcDitch'){
      const xqcDitch = client.emojis.find(emoji => emoji.name === "xqcDitch");
      message.channel.send(`${xqcDitch}`);
   }
