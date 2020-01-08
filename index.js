@@ -27,7 +27,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
      const clap = client.emojis.find(emoji => emoji.name === "clapGif");
      message.channel.send(`${andyHead} ${clap}`);
    }
-}
+})
 
 client.on('message', message=>{
 
