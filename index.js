@@ -21,15 +21,6 @@ client.on("ready", () =>{
   client.user.setActivity("\\help for info", {type: "PLAYING"}).catch(console.error);
 })
 
-client.on('messageUpdate', (oldMessage, newMessage) => {
-   message.channel.send('buh');
-   if(newMessage.content.includes('<:geneHead:627501925033705482>')){
-     const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
-     const clap = client.emojis.find(emoji => emoji.name === "clapGif");
-     message.channel.send(`${andyHead} ${clap}`);
-   }
-})
-
 client.on('message', message=>{
 
   if(message.author == client.user){
@@ -175,6 +166,15 @@ client.on('message', message=>{
       var okIan = os + 'k ian'
       message.channel.send(okIan)
   }
+})
+
+client.on('messageUpdate', (oldMessage, newMessage) => {
+   message.channel.send('buh');
+   if(newMessage.content.includes('<:geneHead:627501925033705482>')){
+     const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
+     const clap = client.emojis.find(emoji => emoji.name === "clapGif");
+     message.channel.send(`${andyHead} ${clap}`);
+   }
 })
 
 client.login(process.env.token);
