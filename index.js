@@ -168,7 +168,7 @@ client.on('message', message=>{
   }
 })
 
-client.on('messageUpdate', (oldMessage, newMessage) => {
+client.on('messageUpdate', async (oldMessage, newMessage) => {
    if (newMessage.author.id === client.user.id) return
    message.channel.send('buh');
    if(newMessage.content.includes('<:geneHead:627501925033705482>')){
