@@ -168,9 +168,7 @@ client.on('message', message=>{
   }
 })
 
-client.on('messageUpdate', async (oldMessage, newMessage) => {
-   if (newMessage.author.id === client.user.id) return
-   message.channel.send('buh');
+client.on('messageUpdate', (oldMessage, newMessage) => {
    if(newMessage.content.includes('<:geneHead:627501925033705482>')){
      const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
      const clap = client.emojis.find(emoji => emoji.name === "clapGif");
