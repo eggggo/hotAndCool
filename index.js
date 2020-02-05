@@ -144,13 +144,16 @@ client.on('message', message=>{
            message.content.toLowerCase().substring(0,3).includes('do ')){
     var rand = Math.floor(Math.random()*3)
     if (rand === 0){
-      message.channel.send('yes :)')
+      const yep = client.emojis.find(emoji => emoji.name === "YEP");
+      message.channel.send(`${yep}`);
     }
     else if (rand === 1){
-      message.channel.send('no :)')
+      const nop = client.emojis.find(emoji => emoji.name === "NOP");
+      message.channel.send(`${nop}`);
     }
     else if (rand === 2){
-      message.channel.send('perhaps :)')
+      const uhm = client.emojis.find(emoji => emoji.name === "UHM");
+      message.channel.send(`${uhm}`);
     }
   }
   else if (message.content.includes('stop')){
