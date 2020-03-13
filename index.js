@@ -185,7 +185,7 @@ const { message, emoji } = messageReaction;
 if(emoji.name === "geneHead") {
     const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
      const clap = client.emojis.find(emoji => emoji.name === "clapGif");
-     newMessage.channel.send(`${andyHead} ${clap}`);
+     message.channel.send(`${andyHead} ${clap}`);
  } 
 })
 
