@@ -179,6 +179,19 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
    }
 })
 
+client.on('messageReactionRemove', (reaction, user) => {
+    console.log('a reaction has been removed');
+});
+
+client.on('messageReactionAdd', (messageReaction, user) => {
+if(user.bot)  return;
+const { message, emoji } = messageReaction;
+if(emoji.name === "geneHead") {
+    const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
+     const clap = client.emojis.find(emoji => emoji.name === "clapGif");
+     newMessage.channel.send(`${andyHead} ${clap}`);
+ } 
+})
 
 client.on('raw', packet => {
     // We don't want this to run on unrelated packets
@@ -205,18 +218,5 @@ client.on('raw', packet => {
     });
 });
 
-client.on('messageReactionRemove', (reaction, user) => {
-    console.log('a reaction has been removed');
-});
-
-client.on('messageReactionAdd', (messageReaction, user) => {
-if(user.bot)  return;
-const { message, emoji } = messageReaction;
-if(emoji.name === "geneHead") {
-    const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
-     const clap = client.emojis.find(emoji => emoji.name === "clapGif");
-     newMessage.channel.send(`${andyHead} ${clap}`);
- } 
-})
 
 client.login(process.env.token);
