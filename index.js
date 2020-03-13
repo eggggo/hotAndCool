@@ -181,7 +181,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 
 client.on('messageReactionRemove', (reaction, user) => {
     console.log('a reaction has been removed');
-});
+})
 
 client.on('messageReactionAdd', (messageReaction, user) => {
 if(user.bot)  return;
@@ -215,8 +215,8 @@ client.on('raw', packet => {
         if (packet.t === 'MESSAGE_REACTION_REMOVE') {
             client.emit('messageReactionRemove', reaction, client.users.get(packet.d.user_id));
         }
-    });
-});
+    })
+})
 
 
 client.login(process.env.token);
