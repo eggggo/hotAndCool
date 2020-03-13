@@ -180,9 +180,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 })
 
 client.on('messageReactionAdd', (messageReaction, user) => {
-if(user.bot){
-  return;
-}
+if(user.bot) return;
 const { message, emoji } = messageReaction;
 if(emoji.name === "geneHead") {
     const andyHead = client.emojis.find(emoji => emoji.name === "andyHead");
