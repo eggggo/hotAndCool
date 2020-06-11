@@ -78,12 +78,14 @@ client.on('message', message=>{
         break;
       }
     break;
+      /*
     case '???':
     case '?!?!':
     case '!?!?':
         const nani = new Discord.Attachment('https://cdn.discordapp.com/attachments/592779094769401924/593073499522859008/Nani.gif')
         message.channel.send(nani)
     break;
+      */
     case 'bye':
       message.channel.send('https://clips.twitch.tv/BlueMoldyClipzRlyTho')
     break;
