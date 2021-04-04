@@ -16,7 +16,8 @@ class ServerIconCommand extends commando.Command {
         if (!args) {
             message.channel.send('plox add an argument')
             message.channel.send('available commands:')
-            message.channel.send('random`\n`andy`\n`bene`\n`david`\n`edward`\n`ethan`\n`gene`\n`ianh`\n`ianx`\n`joe`\n`john`\n`jon`\n`justin`\n`patrick`\n`ryan`\n`memes')
+            var files = fs.readdirSync('./iconPics');
+            message.channel.send(files)
         } else {
             if (args == 'random') {
                 var files = fs.readdirSync('./iconPics');
