@@ -39,7 +39,7 @@ class ServerIconCommand extends commando.Command {
                     const pic = './iconPics/' + args + '/' + tgtPic;
                     message.guild.setIcon(pic);
                 } catch (error) {
-                    message.channel.send('we have no pics of what you asked for sowwy');
+                    message.channel.send('we could not do what you asked sowwy');
                 }
             }
         }
