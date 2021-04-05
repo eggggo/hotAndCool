@@ -18,7 +18,6 @@ class ServerIconCommand extends commando.Command {
         copy.forEach(function(item, index, array){
             if (item.isFulfilled()) {
                 promiseQueue.splice(index, 1);
-                console.log(promiseQueue);
             }
         })
         if (!args) {
@@ -33,8 +32,8 @@ class ServerIconCommand extends commando.Command {
                 files = fs.readdirSync('./iconPics/'+topicName);
                 var tgtPic = files[Math.floor(Math.random() * files.length)];
                 const pic = './iconPics/' + topicName + '/' + tgtPic;
-                var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                 if (promiseQueue.length === 0) {
+                    var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                     promiseQueue.push(promise);
                 } else {
                     message.channel.send('chill out too fast');
@@ -45,8 +44,8 @@ class ServerIconCommand extends commando.Command {
                     files = fs.readdirSync('./iconPics/' + lowercaseArgs);
                     var tgtPic = files[Math.floor(Math.random() * files.length)];
                     const pic = './iconPics/' + lowercaseArgs + '/' + tgtPic;
-                    var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                     if (promiseQueue.length === 0) {
+                        var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                         promiseQueue.push(promise);
                     } else {
                         message.channel.send('chill out too fast');
