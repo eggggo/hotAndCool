@@ -41,9 +41,10 @@ class ServerIconCommand extends commando.Command {
                 }
             } else {
                 try {
-                    files = fs.readdirSync('./iconPics/' + args);
+                    var lowercaseArgs = args.toLowerCase();
+                    files = fs.readdirSync('./iconPics/' + lowercaseArgs);
                     var tgtPic = files[Math.floor(Math.random() * files.length)];
-                    const pic = './iconPics/' + args + '/' + tgtPic;
+                    const pic = './iconPics/' + lowercaseArgs + '/' + tgtPic;
                     var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                     if (promiseQueue.length === 0) {
                         promiseQueue.push(promise);
