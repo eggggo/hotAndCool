@@ -17,7 +17,8 @@ class ServerIconCommand extends commando.Command {
         var copy = promiseQueue.slice();
         copy.forEach(function(item, index, array){
             if (item.isFulfilled()) {
-                promiseQueue.splice(index, index);
+                promiseQueue.splice(index, 1);
+                console.log(promiseQueue);
             }
         })
         if (!args) {
