@@ -6,10 +6,10 @@ var promiseQueue = [];
 class ServerIconCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: "server_icon",
+            name: "si",
             group: "random",
-            memberName: "server_icon",
-            description: "mix it up"
+            memberName: "si",
+            description: "mix the server icon up"
         });
     }
 
