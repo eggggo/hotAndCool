@@ -2,6 +2,11 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js')
 const fs = require('fs');
 var promiseQueue = [];
+var leaderboard = [];
+var files = fs.readdirSync('./iconPics');
+for (var i = 0; i < files.length; i ++) {
+    leaderboard[i] = 0;
+}
 
 class ServerIconCommand extends commando.Command {
     constructor(client) {
@@ -26,15 +31,24 @@ class ServerIconCommand extends commando.Command {
             var files = fs.readdirSync('./iconPics');
             message.channel.send(files)
         } else {
-            if (args == 'random') {
+            if (args === 'leaderboard') {
+                var leaderboardList = '';
+                for (var i = 0; i < leaderboard.length; i ++) {
+                    leaderboardList.concat(files[i] + ': ' + leaderboard[i] + '\n');
+                }
+                message.channel.send(leaderboardList);
+            }
+            else if (args === 'random') {
                 var files = fs.readdirSync('./iconPics');
-                var topicName = files[Math.floor(Math.random() * files.length)];
+                var personIndex = Math.floor(Math.random() * files.length);
+                var topicName = files[personIndex];
                 files = fs.readdirSync('./iconPics/'+topicName);
                 var tgtPic = files[Math.floor(Math.random() * files.length)];
                 const pic = './iconPics/' + topicName + '/' + tgtPic;
                 if (promiseQueue.length === 0) {
                     var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                     promiseQueue.push(promise);
+                    leaderboard[personIndex] ++;
                 } else {
                     message.channel.send('chill out too fast');
                 }
@@ -47,6 +61,7 @@ class ServerIconCommand extends commando.Command {
                     if (promiseQueue.length === 0) {
                         var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                         promiseQueue.push(promise);
+                        leaderboard[fs.readdirSync('./iconPics').indexOf(lowercaseArgs)] ++;
                     } else {
                         message.channel.send('chill out too fast');
                     }
