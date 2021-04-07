@@ -2,11 +2,9 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js')
 const fs = require('fs');
 var promiseQueue = [];
-var leaderboard = [];
-var files = fs.readdirSync('./iconPics');
-for (var i = 0; i < files.length; i ++) {
-    leaderboard[i] = 0;
-}
+var nameIndex = [];
+var currentStandings = [];
+
 
 class ServerIconCommand extends commando.Command {
     constructor(client) {
@@ -25,18 +23,41 @@ class ServerIconCommand extends commando.Command {
                 promiseQueue.splice(index, 1);
             }
         })
+        var names = fs.readdirSync('./iconPics');
+        fs.readFile('leaderboard.txt', function(err, data){
+            if (err) {
+                return console.log(err);
+            }
+            for (var i = 0; i < names.length; i ++) {
+                nameIndex[i] = names[i];
+            }
+            var entries = data.toString().split("\n");
+            for (var i = 0; i < entries.length; i ++) {
+                var nameFreq = entries[i].split(": ");
+                if (nameIndex.indexOf(nameFreq[0]) > -1) {
+                    currentStandings[nameIndex.indexOf(nameFreq[0])] = parseInt(nameFreq[1]);
+                }
+            }
+        })
+
         if (!args) {
             message.channel.send('plox add an argument')
             message.channel.send('available commands:')
             var files = fs.readdirSync('./iconPics');
             message.channel.send(files)
         } else {
-            if (args === 'leaderboard') {
-                var leaderboardList = '';
-                for (var i = 0; i < leaderboard.length; i ++) {
-                    leaderboardList.concat(files[i] + ': ' + leaderboard[i] + '\n');
-                }
-                message.channel.send(leaderboardList);
+            if (args === 'lb' || args === 'leaderboard') {
+                fs.readFile('leaderboard.txt', function(err, data){
+                    if (err) {
+                        return console.log(err);
+                    }
+                    var sorted = data.toString().split("\n").sort(function(first, second){
+                        var firstEntry = first.split(': ');
+                        var secondEntry = second.split(': ');
+                        return parseInt(secondEntry[1]) - parseInt(firstEntry[1]);
+                    })
+                    message.channel.send(sorted);
+                })
             }
             else if (args === 'random') {
                 var files = fs.readdirSync('./iconPics');
@@ -48,7 +69,8 @@ class ServerIconCommand extends commando.Command {
                 if (promiseQueue.length === 0) {
                     var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                     promiseQueue.push(promise);
-                    leaderboard[personIndex] ++;
+                    currentStandings[personIndex] ++;
+                    UpdateLeaderboard();
                 } else {
                     message.channel.send('chill out too fast');
                 }
@@ -61,7 +83,8 @@ class ServerIconCommand extends commando.Command {
                     if (promiseQueue.length === 0) {
                         var promise = MakeQuerablePromise(message.guild.setIcon(pic));
                         promiseQueue.push(promise);
-                        leaderboard[fs.readdirSync('./iconPics').indexOf(lowercaseArgs)] ++;
+                        currentStandings[nameIndex.indexOf(lowercaseArgs)] ++;
+                        UpdateLeaderboard();
                     } else {
                         message.channel.send('chill out too fast');
                     }
@@ -72,6 +95,20 @@ class ServerIconCommand extends commando.Command {
         }
     }
 }
+
+ function UpdateLeaderboard() {
+    var leaderboardTemplate = '';
+    var files = fs.readdirSync('./iconPics');
+    for (var i = 0; i < files.length; i ++) {
+        var line = files[i] + ': ' + currentStandings[i] + '\n';
+        leaderboardTemplate = leaderboardTemplate.concat(line);
+    }
+    fs.writeFile('leaderboard.txt', leaderboardTemplate, function(err) {
+        if (err) {
+            console.log(err);
+        }
+    })
+ }
 
  function MakeQuerablePromise(promise) {
     // Don't modify any promise that has been already modified.
