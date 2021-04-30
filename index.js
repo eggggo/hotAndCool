@@ -100,9 +100,6 @@ client.on('message', message=>{
       ]
       message.channel.send(replies[rand2])
     break;
-    case '\15':
-      message.channel.send("damn you're kinda hardstuck")
-    break;
     case 'amazing':
       message.channel.send('A-MEI-ZING')
     break;
