@@ -13,7 +13,7 @@ class FifteenCommand extends commando.Command {
 
     async run(message, args) {
         message.channel.send("yikes, you're kinda hardstuck");
-        channel.send({files: ['hardstuck.mp3']})
+        message.channel.send({files: ['hardstuck.mp3']})
     }
 }
 
