@@ -12,9 +12,8 @@ class FifteenCommand extends commando.Command {
     }
 
     async run(message, args) {
-        message.channel.send('yikes, you're kinda hardstuck');
-        message.channel.send(hardstuckmp3);
-       }
+        message.channel.send("yikes, you're kinda hardstuck");
+    }
 }
 
 module.exports = FifteenCommand;
