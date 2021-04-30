@@ -13,7 +13,6 @@ class FifteenCommand extends commando.Command {
 
     async run(message, args) {
         message.channel.send('yikes, you're kinda hardstuck');
-        const hardstuckmp3 = new Discord.Attachment('hardstuck.mp3');
         message.channel.send(hardstuckmp3);
        }
 }
